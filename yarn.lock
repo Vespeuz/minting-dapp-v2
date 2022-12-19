@@ -14108,10 +14108,10 @@
     "web3-shh" "1.7.3"
     "web3-utils" "1.7.3"
 
-"web3modal@^1.9.9":
-  "integrity" "sha512-ML1C4xH+JTSHHkKbjxuF+f5B3cDUOCnrdQZ8Mlzippq7zRKHf3NBeuIvDdNjtVclJ2S4zYYVmVqRWrgB11ej8A=="
-  "resolved" "https://registry.npmjs.org/web3modal/-/web3modal-1.9.9.tgz"
-  "version" "1.9.9"
+"web3modal@^1.9.10":
+  "integrity" "sha512-gRByp+toRiADwkJLLGRXsnIVbLS1aJB71sJyryS6C7cF6jJ3cRN1LbPYEMObMyJkyjOZonx0CNZVAYGiD099aA=="
+  "resolved" "https://registry.npmjs.org/web3modal/-/web3modal-1.9.10.tgz"
+  "version" "1.9.10"
   dependencies:
     "detect-browser" "^5.1.0"
     "prop-types" "^15.7.2"

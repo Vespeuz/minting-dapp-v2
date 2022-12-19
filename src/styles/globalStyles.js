@@ -91,10 +91,9 @@ export const TextSub = styled.p`
 `;
 
 export const TextTotal = styled.p`
-  font-family: 'Upheaval';
   color: var(--primary-text);
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 2px;
   line-height: 1.6;
   @media (max-width: 565px) {

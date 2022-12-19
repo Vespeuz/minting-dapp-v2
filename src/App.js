@@ -131,7 +131,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 align-content: center;
-gap: 10%;
+gap: 30%;
 width: 300px;
 `;
 
@@ -143,9 +143,9 @@ export const ResponsiveWrapper = styled.div`
   align-items: center;
   margin: auto;
   width: 70%;
-  border: 2px solid white;
   border-radius: 40px;
-  background: #ABDBE3; // linear-gradient(90deg, rgba(135,142,20,1) 10%, rgba(0,125,223,1) 93%)
+  background: rgba(171, 219, 227, 0.5);
+
     @media (min-width: 767px) {
     flex-direction: row;
   }
@@ -160,7 +160,7 @@ export const ResponsiveWrapperHeader = styled.div`
   width: 100%;
   max-height: 80px;
   padding: 10px;
-  background-color : #ABDBE3;
+  background-color : transparent;
   @media (min-width: 767px) {
     flex-direction: row;
   }
@@ -171,7 +171,7 @@ export const ResponsiveWrapperHeader = styled.div`
 
 export const StyledLogo = styled.img`
   display: inline;
-  width: 200px;
+  width: 600px;
   @media (max-width: 767px) {
     width: 150px;
   }
@@ -308,7 +308,7 @@ function App() {
     setbxsh("0px 0px 3px 0px yellow");
     toaster.push(mntmessage, { placement })
     blockchain.smartContract.methods
-      .saleMint(tokens)
+      .Mint(tokens)
       .send({
         gasLimit: String(totalGasLimit),
         to: CONFIG.CONTRACT_ADDRESS,
@@ -383,43 +383,29 @@ function App() {
     <s.Screen>
       <s.Container
         flex={1}
-        // ai={"center"}
-        style={{backgroundColor: "var(--primary)" }}
+        ai={"center"}
+        style={{ padding: 24, backgroundColor: "var(--accent)" }}
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
         <ResponsiveWrapperHeader>
 
-          <LogoDiv>
+          <LogoDiv style={{ width: 700}} >
           <a href="#" target={"_blank"}>
             <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
           </a>
           </LogoDiv>
 
-          <s.Headerlinks>
-            <s.StyledLink href="#about">
-              About
-            </s.StyledLink >
-            <s.StyledLink href="#sneak">
-               Sneak Peaks
-              </s.StyledLink>
-              <s.StyledLink href="#faq">
-               FAQ
-              </s.StyledLink>
-          </s.Headerlinks>
+          
 
 
 
           <s.HeaderDiv>
           <s.socialDiv>
-          <a href={CONFIG.Telegram} target={"_blank"}>
-          <s.Icons src="/config/images/telegram.svg" alt="telegram" />
-          </a>
+          
             <a href={CONFIG.Twitter} target={"_blank"}>
           <s.Icons src="/config/images/twitter.svg" alt="twitter" />
           </a>
-          <a href={CONFIG.Discord} target={"_blank"}>
-          <s.Icons src="/config/images/discord.svg" alt="discord" />
-          </a>
+          
           <a href={CONFIG.MARKETPLACE_LINK} target={"_blank"}>
           <s.Icons src="/config/images/opensea.svg" alt="opensea" />
           </a>
@@ -448,7 +434,7 @@ function App() {
     
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
-        <StyledImg src={"/config/images/hashlips.png"} alt="image" />
+        <StyledImg src={"/config/images/donaldtrump.gif"} alt="gif" />
         <s.SpacerSmall/>
             <s.Container flex={1} jc={"center"} ai={"center"} >
 
@@ -478,7 +464,7 @@ function App() {
                   {data.totalSupply} / {CONFIG.MAX_SUPPLY}
                 </s.TextSub>
                 <s.SpacerSmall />
-                <s.TextTotal style={{background: "white" , borderRadius: 5, padding: 8, color: "black"}}>
+                <s.TextTotal style={{background: "white" , borderRadius: 5, padding: 8, color: "black", boxShadow: "4px 4px 8px rgba(0, 0, 0, 0.2)"}}>
                       Price&emsp;&emsp;&emsp;&emsp;&emsp;{CONFIG.DISPLAY_COST}{" "}{CONFIG.NETWORK.SYMBOL}
                     </s.TextTotal>
                 <s.SpacerMedium/>
@@ -551,7 +537,7 @@ function App() {
                           settokens(CONFIG.MAX_PER_TX);
                         }}
                         >
-                      SetMax
+                      Set Max
                     </Maxbtn>
                     <s.SpacerSmall />
                     <s.SpacerSmall />
@@ -591,93 +577,13 @@ function App() {
 
 
         <s.SpacerLarge />
-        <s.SecContainer id="about">
-        <s.TextTitle style={{fontSize: "38px"}}>
-            About Hashlips
-            </s.TextTitle>
-            <s.SpacerLarge/>
-            <s.TextP style={{color:'#383737'}}>
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-<br></br><br></br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.            
-</s.TextP>
-            </s.SecContainer>
-
-            <s.SecContainer id="sneak">
-            <s.TextTitle style={{fontSize: "38px"}}>
-            Sneak Peaks
-            </s.TextTitle>
-            <s.SpacerLarge/>
-            <s.CBOX>
-            <Carousel autoplay className="custom-slider">
-    <img src="/config/images/1.jpg" />
-    <img src="/config/images/2.jpg" />
-    <img src="/config/images/3.jpg" />
-    <img src="/config/images/4.jpg" />
-    <img src="/config/images/5.jpg" />
-  </Carousel>
-  </s.CBOX>
-              </s.SecContainer>
-
-              <s.SecContainer id="faq" >
-            <s.TextTitle style={{fontSize: "38px"}}>
-            Frequently Asked Questions
-            </s.TextTitle>
-            <s.SpacerLarge/>
-            <PanelGroup style={{width: "80%", borderColor: "#A9D0D2"}} accordion bordered>
-    <Panel header ="What is a NFT?" >
-    <s.TextP style={{textAlign: "left", color: "#383737"}}>
-          Lorem ipsum dalar valar malar havan huarasf afaxvas fafs
-          </s.TextP>
-    </Panel>
-    <Panel header="How can I mint">
-    <s.TextP style={{textAlign: "left",  color: "#383737"}}>
-    Lorem ipsum dalar valar malar havan huarasf afaxvas fafs
-          </s.TextP>
-    </Panel>
-    <Panel header="What is Hashlips">
-    <s.TextP style={{textAlign: "left",  color: "#383737"}}>
-    Lorem ipsum dalar valar malar havan huarasf afaxvas fafs
-          </s.TextP>
-    </Panel>
-    <Panel header="What is Hashlips">
-    <s.TextP style={{textAlign: "left",  color: "#383737"}}>
-    Lorem ipsum dalar valar malar havan huarasf afaxvas fafs
-          </s.TextP>
-    </Panel>
-    <Panel header="What is Hashlips">
-    <s.TextP style={{textAlign: "left",  color: "#383737"}}>
-    Lorem ipsum dalar valar malar havan huarasf afaxvas fafs
-          </s.TextP>
-    </Panel>
-    <Panel header="What is Hashlips">
-    <s.TextP style={{textAlign: "left",  color: "#383737"}}>
-    Lorem ipsum dalar valar malar havan huarasf afaxvas fafs
-          </s.TextP>
-    </Panel>
-  </PanelGroup>
-            </s.SecContainer>
 
 
 
             <s.SecContainer id="">
-                <s.socialDiv>
-          <a href={CONFIG.Telegram} target={"_blank"}>
-          <s.Icons src="/config/images/telegram.svg" alt="telegram" />
-          </a>
-            <a href={CONFIG.Twitter} target={"_blank"}>
-          <s.Icons src="/config/images/twitter.svg" alt="twitter" />
-          </a>
-          <a href={CONFIG.Discord} target={"_blank"}>
-          <s.Icons src="/config/images/discord.svg" alt="discord" />
-          </a>
-          <a href={CONFIG.MARKETPLACE_LINK} target={"_blank"}>
-          <s.Icons src="/config/images/opensea.svg" alt="opensea" />
-          </a>
-          </s.socialDiv>
+                
           <s.SpacerLarge/>
-          <s.TextP style={{textAlign: "center",  color: "#383737"}}>
+          <s.TextP style={{textAlign: "center",  color: "white"}}>
           Copyright © 2022 {CONFIG.NFT_NAME}
           </s.TextP>
             </s.SecContainer>
