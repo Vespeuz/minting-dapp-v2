@@ -388,15 +388,12 @@ function App() {
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
         <ResponsiveWrapperHeader>
-
+      
           <LogoDiv style={{ width: 700}} >
           <a href="#" target={"_blank"}>
             <StyledLogo alt={"logo"} src={"/config/images/logo.png"} />
           </a>
           </LogoDiv>
-
-          
-
 
 
           <s.HeaderDiv>
@@ -409,6 +406,11 @@ function App() {
           <a href={CONFIG.MARKETPLACE_LINK} target={"_blank"}>
           <s.Icons src="/config/images/opensea.svg" alt="opensea" />
           </a>
+
+          <a href={CONFIG.Etherscan} target={"_blank"}>
+          <s.Icons src="/config/images/etherscan.svg" alt="etherscan" />
+          </a>
+
           </s.socialDiv>
           <WalletBox>
             {blockchain.account !== "" ? (
